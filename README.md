@@ -107,6 +107,12 @@ supervisorctl restart test-service
 **install nginx.**
 
 ```shell
+yum install git
+```
+
+**install nginx.**
+
+```shell
 yum install nginx
 
 whereis nginx
