@@ -156,7 +156,7 @@ install mysql client 5.7 on centos7.
 
 ```shell
 vim /etc/yum.repos.d/mysql-community.repo  # 添加mysql源
-mysql-connectors-community]
+[mysql-connectors-community]
 name=MySQL Connectors Community
 baseurl=https://mirrors.tuna.tsinghua.edu.cn/mysql/yum/mysql-connectors-community-el7-$basearch/
 enabled=1
