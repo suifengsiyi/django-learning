@@ -104,7 +104,7 @@ supervisorctl restart test-service
 
 # Install Other Utils
 
-**install nginx.**
+**install git.**
 
 ```shell
 yum install git
@@ -148,6 +148,47 @@ bind 0.0.0.0
 
 service redis start
 chkconfig redis on
+```
+
+**install mysql client.**
+
+install mysql client 5.7 on centos7.
+
+```shell
+vim /etc/yum.repos.d/mysql-community.repo  # 添加mysql源
+mysql-connectors-community]
+name=MySQL Connectors Community
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/mysql/yum/mysql-connectors-community-el7-$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+
+[mysql-tools-community]
+name=MySQL Tools Community
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/mysql/yum/mysql-tools-community-el7-$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+
+[mysql-5.6-community]
+name=MySQL 5.6 Community Server
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/mysql/yum/mysql-5.6-community-el7-$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+
+[mysql-5.7-community]
+name=MySQL 5.7 Community Server
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/mysql/yum/mysql-5.7-community-el7-$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+
+yum list mysql-community-client --showduplicates | sort -r  # 查看
+
+yum install mysql-community-client  # 根据源配置装最高版本
+
+mysql -utest -hx.x.x.x -pxxx  -P3306  # 连接远端mysql服务
 ```
 
 # Other
