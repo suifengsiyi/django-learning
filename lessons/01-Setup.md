@@ -1,4 +1,4 @@
-# 入门
+# 搭建
 
 **基本环境**
 
@@ -7,7 +7,6 @@
 - djangorestframework3.6+
 - django-filter1.1+
 - mysqlclient1.3+
-
 - mysql3.6+
 
 ## 创建项目
